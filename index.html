@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./tabs/tabs.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="web-title">
+      <h1>BuildMyResume</h1>
+    </div>
+
+    <form id="tabs">
+      <div class="tab">
+        <button
+          class="tablinks"
+          onclick="openCity(event, 'London')"
+          id="defaultOpen"
+        >
+          contact
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">
+          education
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+          skill
+        </button>
+        <!-- <button class="tablinks" onclick="openCity(event, 'Resume')" type="submit">Generate Resume</button> -->
+      </div>
+
+      <div id="London" class="tabcontent">
+        <h1>Contact</h1>
+        <div class="web-content">
+          <label>
+            <input
+              type="text"
+              id="name"
+              class="name"
+              placeholder="Name"
+              required
+            />
+          </label>
+          <label>
+            <input
+              type="number"
+              id="exp"
+              class="exp"
+              placeholder="Experience (in years)"
+              required
+            />
+          </label>
+          <label>
+            <input
+              type="email"
+              id="email"
+              class="email"
+              placeholder="Email"
+              required
+            />
+          </label>
+          <label>
+            <input
+              type="text"
+              id="adress"
+              class="email"
+              placeholder="Adress"
+              required
+            />
+          </label>
+        </div>
+      </div>
+
+      <div id="Paris" class="tabcontent">
+        <h1>Education</h1>
+        <div class="web-content">
+          <label>
+            <input
+              type="text"
+              id="deg"
+              class="name"
+              placeholder="Degree or Program"
+              required
+            />
+          </label>
+          <label>
+            <input
+              type="text"
+              id="field"
+              class="exp"
+              placeholder="Field"
+              required
+            />
+          </label>
+          <label>
+            <select name="year" class="email" id="gradYear">
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016</option>
+              <option value="2015">2015</option>
+              <option value="2014">2014</option>
+              <option value="2013">2013</option>
+              <option value="2012">2012</option>
+              <option value="2011">2011</option>
+              <option value="2010">2010</option>
+            </select>
+            <!-- <input
+              type="number"
+              id="gradYear"
+              class="email"
+              placeholder="Graduaton Year"
+              required
+            /> -->
+          </label>
+          <label>
+            <input
+              type="text"
+              id="uniName"
+              class="email"
+              placeholder="University"
+              required
+            />
+          </label>
+        </div>
+      </div>
+
+      <div id="Tokyo" class="tabcontent" style="overflow-y: scroll;">
+        <h1>Skill</h1>
+
+        <!-- Button to add new skill -->
+        <button id="addInput">Add skill</button>
+
+        <!-- Container to hold the new skill -->
+        <div id="inputContainer"></div>
+      </div>
+
+      <button id="generateResume" class="genResume" type="submit">Generate Resume</button>
+    </form>
+
+    <div id="displayForm" class="display_form">
+      <!-- <h2>Submitted Data</h2> -->
+      <div style="background-color: black; color: white; padding: 20px">
+        <img style="width: 100px" src="./blankimg.png" alt="" />
+        <div>
+          <p
+            style="
+              float: left;
+              font-size: xx-large;
+              margin-top: 0;
+              padding-top: 0;
+            "
+          >
+            <span id="displayName"></span>
+          </p>
+          <div style="text-align: right">
+            <p><span id="displayEmail"></span></p>
+            <p><span id="displayAdress"></span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- skills  -->
+      <h2 style="padding-left: 20px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">SKILLS</h2>
+      <div id="skillsContainer" class="skills-container">
+        <p> <span id="displaySkills"></span></p>
+      </div>
+      <p style="margin-left: 10%;">Experience: <span id="displayExp"></span></p><hr>
+
+      <h2 style="padding-left: 20px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">EDUCATION</h2>
+      <div style="margin-left: 10%; margin-bottom: 30%;">
+        <p style="font-size: medium;font-weight: bold;"><span id="displayDeg"></span> in <span id="displayField"></span> </p>
+        <p>Graduate from <span id="displayUni"></span> University in <span id="displayGradYear"></span></p>
+      </div><hr>
+    </div>
+
+    <script src="./tabs/tabs.js"></script>
+    <script defer src="./app.js"></script>
+    <script src="./practice/app2.js"></script>
+  </body>
+</html>
